@@ -91,4 +91,8 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionContracts() {
+        return $this->render('contracts');
+    }
 }
