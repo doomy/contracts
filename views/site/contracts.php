@@ -1,33 +1,17 @@
-<?php use yii\helpers\Html;
+<?php
+
+use yii\grid\GridView;
 
 $this->title = "Contracts";
 $indexes = array();
 
+echo "<h1>{$this->title}</h1>";
+
+echo GridView::widget([
+    'dataProvider' => $dataProvider,
+]);
+
+
 
 ?>
 
-<div>
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <table>
-    <tr>
-        <?php
-            $contract = $contracts[0];
-            foreach($contract->attributeLabels() as $index => $label) {
-                echo "<th>$label</th>";
-                $indexes[] = $index;
-            }
-        ?>
-    </tr>
-    <?php
-        foreach ($contracts as $contract) { ?>
-        <tr>
-            <?php foreach($indexes as $index) { ?>
-                <td>
-                    <?= $contract->$index; ?>
-                </td>
-            <?php } ?>
-        </tr>
-   <?php } ?>
-    </table>
-</div>

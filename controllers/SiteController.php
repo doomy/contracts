@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\TContract;
+use yii\data\ActiveDataProvider;
 
 class SiteController extends Controller
 {
@@ -94,8 +95,13 @@ class SiteController extends Controller
     }
 
     public function actionContracts() {
-        $contracts = TContract::find()->all();
+        $dataProvider = new ActiveDataProvider([
+            'query' => TContract::find(),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
 
-        return $this->render('contracts', array('contracts' => $contracts));
+        return $this->render('contracts', array('dataProvider' => $dataProvider));
     }
 }
