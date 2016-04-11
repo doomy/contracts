@@ -20,7 +20,7 @@ CREATE TABLE t_contract_status (
 );
 
 CREATE TABLE t_contract (
-    id INT NOT NULL UNIQUE,
+    id INT NOT NULL UNIQUE AUTO_INCREMENT,
     contract_type_id INT NOT NULL,
     contract_status_id INT NOT NULL,
     company_name VARCHAR(255) NOT NULL,
