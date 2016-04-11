@@ -2,7 +2,13 @@
 
 <div>
     <table>
-        <tr><td>Contract 1</td></tr>
-        <tr><td>Contract 2</td></tr>
+    <?php
+        foreach ($contracts as $contract) { ?>
+        <tr>
+            <td>
+                <?= $contract->contract_subject; ?>
+            </td>
+        </tr>
+   <?php } ?>
     </table>
 </div>

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\TContract;
 
 class SiteController extends Controller
 {
@@ -93,6 +94,8 @@ class SiteController extends Controller
     }
 
     public function actionContracts() {
-        return $this->render('contracts');
+        $contracts = TContract::find()->all();
+
+        return $this->render('contracts', array('contracts' => $contracts));
     }
 }
