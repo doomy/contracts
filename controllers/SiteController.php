@@ -104,4 +104,10 @@ class SiteController extends Controller
 
         return $this->render('contracts', array('dataProvider' => $dataProvider));
     }
+
+    public function actionContractForm() {
+        $contract = new TContract();
+        return $this->render('contract_form', array('contract' => $contract));
+    }
+
 }
